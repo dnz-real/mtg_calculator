@@ -2,16 +2,16 @@
 <html>
 
 <head>
-    <title>DNZ Mortgage Estimator</title>
+    <title>Mortgage Estimator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>DNZ Mortgage Estimator</h1>
+        <h1>Mortgage Estimator</h1>
         <div id="myText">
             <h2>계산기 사용법</h2>
-            <p> <span class="regular-text">Monthly Wage, Property Price, Interest Rate 를 입력해주세요</span>
+            <p> <span class="regular-text">Monthly Wage, Property Price, Interest Rate 을 입력하세요</span>
                 <br>
                 <span class="small-text">Monthly Wage: 매달 인컴 총 양</span>
                 <br>
@@ -28,27 +28,35 @@
                 <br>
                 <span class="small-text">신용카드 페이먼트는 Minimum Payment 로 계산하시면 됩니다</span>
                 <br>
-                <span class="small-text">자동차, 신용카드 페이먼트 등은 Pay Off 시 총 융자 금액을 늘리실 수 있습니다</span>
+                <span class="small-text">차, 신용카드 페이먼트 등은 Pay Off 시 융자 금액을 늘리실 수 있습니다</span>
+                <br>
+                <br>
+                <span class="small-text">Disclaimer: </span>
+
             </p>
         </div>
         <button onclick="toggleText()">사용법 (How to Use)</button>
         <div id="toggleContent">
             <br>
             <div class="input-group">
-                <label for="monthlyWage">Monthly Wage ($): <br> <span>(총 월 수입)</span></label>
-                <input type="number" id="monthlyWage" min="0" step="100">
-                </p>
+                <label for="monthlyWage">Monthly Wage ($): <br> <span>(총 월 수입)</span><br>
+                    <input type="number" id="monthlyWage" min="0" step="100"></label>
             </div>
 
             <div class="input-group">
-                <label for="propertyPrice">Property Price ($): <br> <span>(집 가격)</span></label>
-                <input type="number" id="propertyPrice" min="0" step="100000">
+                <label for="propertyPrice">Property Price ($): <br> <span>(주택 가격)</span><br>
+                    <input type="number" id="propertyPrice" min="0" step="100000"></label>
             </div>
 
             <div class="input-group">
-                <label for="interestRate">Interest Rate (%): <br> <span>(이자율)</span></label>
-                <input type="number" id="interestRate" min="0" step="0.125">
+                <label for="interestRate">Interest Rate (%): <br> <span>(이자율)</span><br>
+                    <input type="number" id="interestRate" min="0" step="0.125"></label>
             </div>
+            <span class="small-text">최근 이자율: 6%</span>
+
+            <br>
+            <br>
+            <br>
 
             <div class="input-group">
                 <label for="monthlyInsurance">Monthly Insurance ($): <br> <span>(월 집 보험료)</span></label>
