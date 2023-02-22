@@ -1,6 +1,15 @@
 const calculateButton = document.getElementById("calculateButton");
 calculateButton.addEventListener("click", calculateMortgage);
 
+function toggleText() {
+  var x = document.getElementById("myText");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 function calculateMortgage() {
   const monthlyWage = Number(document.getElementById("monthlyWage").value);
   const interestRate = Number(document.getElementById("interestRate").value);
