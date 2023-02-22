@@ -9,77 +9,80 @@
 <body>
     <div class="container">
         <h1>DNZ Mortgage Estimator</h1>
-        <span class="regular-text">사용법 (How to Use)</span>
-        <br>
-        <span class="regular-text">Monthly Wage, Property Price, Interest Rate 를 입력해주세요</span>
-        <br>
-        <span class="small-text">Monthly Wage: 매달 인컴 총 양</span>
-        <br>
-        <span class="small-text">Property Price: 구매하실 주택의 대략적인 가격</span>
-        <br>
-        <span class="small-text">Interest Rate: 현재 이자율</span>
-        <br>
-        <br>
-        <span class="small-text">Other Monthly Debt 설명:</span>
-        <br>
-        <span class="small-text">신용카드 빚, 자동차 페이먼트 등이 융자 금액 산정에 영향을 미칩니다</span>
-        <br>
-        <span class="small-text">매달 나가는 모든 페이먼트를 합친 대략적인 수치를 적어주세요</span>
-        <br>
-        <span class="small-text">신용카드 페이먼트는 Minimum Payment 로 계산하시면 됩니다</span>
-        <br>
-        <span class="small-text">자동차, 신용카드 페이먼트 등은 Pay Off 시 총 융자 금액을 늘리실 수 있습니다</span>
-        <br>
-        <br>
-        <div class="input-group">
-            <label for="monthlyWage">Monthly Wage ($): <br> <span>(총 월 수입)</span></label>
-            <input type="number" id="monthlyWage" min="0" step="100">
+        <div id="myText">
+            <h2>계산기 사용법</h2>
+            <p> <span class="regular-text">Monthly Wage, Property Price, Interest Rate 를 입력해주세요</span>
+                <br>
+                <span class="small-text">Monthly Wage: 매달 인컴 총 양</span>
+                <br>
+                <span class="small-text">Property Price: 구매하실 주택의 대략적인 가격</span>
+                <br>
+                <span class="small-text">Interest Rate: 현재 이자율</span>
+                <br>
+                <br>
+                <span class="small-text">Other Monthly Debt 설명:</span>
+                <br>
+                <span class="small-text">신용카드 빚, 자동차 페이먼트 등이 융자 금액 산정에 영향을 미칩니다</span>
+                <br>
+                <span class="small-text">매달 나가는 모든 페이먼트를 합친 대략적인 수치를 적어주세요</span>
+                <br>
+                <span class="small-text">신용카드 페이먼트는 Minimum Payment 로 계산하시면 됩니다</span>
+                <br>
+                <span class="small-text">자동차, 신용카드 페이먼트 등은 Pay Off 시 총 융자 금액을 늘리실 수 있습니다</span>
             </p>
         </div>
+        <button onclick="toggleText()">사용법 (How to Use)</button>
+        <div id="toggleContent">
+            <br>
+            <div class="input-group">
+                <label for="monthlyWage">Monthly Wage ($): <br> <span>(총 월 수입)</span></label>
+                <input type="number" id="monthlyWage" min="0" step="100">
+                </p>
+            </div>
 
-        <div class="input-group">
-            <label for="propertyPrice">Property Price ($): <br> <span>(집 가격)</span></label>
-            <input type="number" id="propertyPrice" min="0" step="100000">
+            <div class="input-group">
+                <label for="propertyPrice">Property Price ($): <br> <span>(집 가격)</span></label>
+                <input type="number" id="propertyPrice" min="0" step="100000">
+            </div>
+
+            <div class="input-group">
+                <label for="interestRate">Interest Rate (%): <br> <span>(이자율)</span></label>
+                <input type="number" id="interestRate" min="0" step="0.125">
+            </div>
+
+            <div class="input-group">
+                <label for="monthlyInsurance">Monthly Insurance ($): <br> <span>(월 집 보험료)</span></label>
+                <input type="number" id="monthlyInsurance" placeholder="140" min="0" step="50" value="140">
+            </div>
+
+            <div class="input-group">
+                <label for="propertyTaxRate">Property Tax Rate (%): <br> <span>(재산세)</span></label>
+                <input type="number" id="propertyTaxRate" placeholder="1.2" min="0" step="0.1" value="1.2">
+            </div>
+            <div class="input-group">
+                <label for="hoa">HOA ($): <br> <span>(월 관리비)</span></label>
+                <input type="number" id="hoa" placeholder="0" min="0" step="50">
+            </div>
+
+            <div class="input-group">
+                <label for="hoa">HOA2, Mello-Roos, etc ($): <br> <span>(그 외 주택 관련 월 페이먼트)</span></label>
+                <input type="number" id="otherMonthlyHousing" placeholder="0" min="0" step="50">
+            </div>
+
+            <div class="input-group">
+                <label for="monthlyDebt">Other Monthly Debt ($): <br> <span>(자동차, 신용카드 등)</span></label>
+                <input type="number" id="monthlyDebt" placeholder="0" min="0" step="50">
+            </div>
+            <div class="input-group">
+                <label for="term">Term (years): <br> <span>(융자 년 수)</span></label>
+                <input type="number" id="term" placeholder="30" min="1" max="50" step="5" value="30">
+            </div>
+            <button id="calculateButton">Calculate</button>
+            <div id="result"></div>
+            <div id="disclaimer" class="small-text"></div>
         </div>
 
-        <div class="input-group">
-            <label for="interestRate">Interest Rate (%): <br> <span>(이자율)</span></label>
-            <input type="number" id="interestRate" min="0" step="0.125">
-        </div>
-
-        <div class="input-group">
-            <label for="monthlyInsurance">Monthly Insurance ($): <br> <span>(월 집 보험료)</span></label>
-            <input type="number" id="monthlyInsurance" placeholder="140" min="0" step="50" value="140">
-        </div>
-
-        <div class="input-group">
-            <label for="propertyTaxRate">Property Tax Rate (%): <br> <span>(재산세)</span></label>
-            <input type="number" id="propertyTaxRate" placeholder="1.2" min="0" step="0.1" value="1.2">
-        </div>
-        <div class="input-group">
-            <label for="hoa">HOA ($): <br> <span>(월 관리비)</span></label>
-            <input type="number" id="hoa" placeholder="0" min="0" step="50">
-        </div>
-
-        <div class="input-group">
-            <label for="hoa">HOA2, Mello-Roos, etc ($): <br> <span>(그 외 주택 관련 월 페이먼트)</span></label>
-            <input type="number" id="otherMonthlyHousing" placeholder="0" min="0" step="50">
-        </div>
-
-        <div class="input-group">
-            <label for="monthlyDebt">Other Monthly Debt ($): <br> <span>(자동차, 신용카드 등)</span></label>
-            <input type="number" id="monthlyDebt" placeholder="0" min="0" step="50">
-        </div>
-        <div class="input-group">
-            <label for="term">Term (years): <br> <span>(융자 년 수)</span></label>
-            <input type="number" id="term" placeholder="30" min="1" max="50" step="5" value="30">
-        </div>
-        <button id="calculateButton">Calculate</button>
-        <div id="result"></div>
-        <div id="disclaimer" class="small-text"></div>
-    </div>
-
-    <script src="app.js"></script>
+        <script src="app.js"></script>
 </body>
 
 </html>
