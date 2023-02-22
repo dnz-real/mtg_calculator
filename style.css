@@ -11,6 +11,7 @@ h1 {
 
 .input-group {
     margin: 10px 0;
+    font-size: 20px;
 }
 
 label {
@@ -21,8 +22,8 @@ label {
 
 
 .input-group label span {
-    font-size: 14px;
-    color: #ccc;
+    font-size: 18px;
+    color: #ffffff;
 }
 
 .description {
@@ -34,17 +35,17 @@ label {
 input[type="number"] {
     width: 150px;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
     box-sizing: border-box;
     font-size: 16px;
 }
 
 button {
-    margin-top: 20px;
+    margin-top: 5px;
     background-color: #4CAF50;
     color: white;
-    padding: 12px 20px;
+    padding: 6px 12px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -52,13 +53,13 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #20b1f4;
 }
 
 #result {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.2;
 }
 
 .small-text {
