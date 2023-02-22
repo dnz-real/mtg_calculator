@@ -68,3 +68,7 @@ button:hover {
 .regular-text {
     font-size: 18px;
 }
+
+#myText {
+    display: none;
+}
