@@ -53,7 +53,7 @@ function calculateMortgage() {
   const disclaimer = `
     The amount is subject to change depending on the day's interest rate.
     <br>
-    <br>
+    <br>In the Scenario of Purchasing a Property that is
     $${comma(propertyPrice.toFixed(2))} With the interest rate of ${interestRate.toFixed(2)}%,
     <br>
     <br>**With 20% Down Payment ($${comma((propertyPrice * 0.2).toFixed(2))})**
